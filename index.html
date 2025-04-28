@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ambient Synth</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        transition: background-color 2s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .link-box-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Instagram Logo */
+      .link-box.instagram-logo {
+        width: 80px;
+        height: 80px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .link-box.instagram-logo:hover {
+        transform: scale(1.1);
+      }
+
+      /* LinkedIn Logo */
+      .link-box.linkedin-logo {
+        width: 80px;
+        height: 80px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .link-box.linkedin-logo:hover {
+        transform: scale(1.1);
+      }
+
+      /* IMDb Logo */
+      .link-box.imdb-logo {
+        width: 80px;
+        height: 80px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/69/IMDB_Logo_2016.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .link-box.imdb-logo:hover {
+        transform: scale(1.1);
+      }
+
+      /* Letterboxd Logo */
+      .link-box.letterboxd-logo {
+        width: 80px;
+        height: 80px;
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/93/Letterboxd_2018_logo_%28vertical%29.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .link-box.letterboxd-logo:hover {
+        transform: scale(1.1);
+      }
+
+      /* Generic link-box styling */
+      .link-box {
+        width: 200px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .link-box:hover {
+        background-color: rgba(0, 0, 0, 1);
+      }
+
+      /* Fancy pulsing glow effect */
+      @keyframes pulse {
+        0% {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+            0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.7);
+        }
+        50% {
+          text-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+            0 0 30px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.8);
+        }
+        100% {
+          text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+            0 0 20px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.7);
+        }
+      }
+
+      /* Apply the pulsing effect */
+      #start-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        color: black;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 1s ease;
+        animation: pulse 2s infinite ease-in-out;
+        font-family: "Arial", sans-serif;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Tap to Start Overlay -->
+    <div id="start-overlay">Tap to Start</div>
+
+    <div class="link-box-container">
+      <div
+        class="link-box instagram-logo"
+        onclick="window.location.href='https://www.instagram.com/callistophl/'"
+      ></div>
+      <div
+        class="link-box linkedin-logo"
+        onclick="window.location.href='https://www.linkedin.com/in/colin-smith-343115261/'"
+      ></div>
+      <div
+        class="link-box imdb-logo"
+        onclick="window.location.href='https://www.imdb.com/name/nm16776271/'"
+      ></div>
+      <div
+        class="link-box letterboxd-logo"
+        onclick="window.location.href='https://letterboxd.com/composer/colin-marsden-smith/'"
+      ></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
